@@ -1,0 +1,54 @@
+# Modified from BasicSR (https://github.com/xinntao/BasicSR)
+
+# general settings
+name: Testmodel
+model_type: Image_Restoration_Physics_Model
+scale: 1
+num_gpu: 1 # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+# dataset and data loader settings
+datasets:
+
+  test:
+    name: divpano-test
+    type: ImagewithPIDataset
+
+    dataroot_gt: ./datasets/DIVPano_lmdb/DIVPano_Val_HR.lmdb
+    dataroot_lq: ./datasets/DIVPano_lmdb/DIVPano_Val_LR.lmdb
+    dataroot_psf: ./datasets/PI_Val.pth
+    io_backend:
+      type: lmdb
+ 
+# network structures
+network_g:
+  type: PI2RNet
+  wf: 64
+  hin_position_left: 0
+  hin_position_right: 3
+
+# path
+path:
+  pretrain_network_g: ./experiments/ModelZoo/net_g_ours.pth
+  strict_load_g: true
+  resume_state: ~
+
+# validation settings
+val:
+  save_img: false
+  grids: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500

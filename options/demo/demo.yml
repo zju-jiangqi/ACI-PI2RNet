@@ -1,0 +1,34 @@
+# Modified from BasicSR (https://github.com/xinntao/BasicSR)
+# general settings
+name: demo
+model_type: Image_Restoration_Physics_Model
+scale: 1
+num_gpu: 1 # set num_gpu: 0 for cpu mode
+manual_seed: 10
+
+# single image inference and save image
+img_path:
+  input_img: ./demo/Input/testimg1.jpg
+  psf_path: ./demo/Input/PI_Test.pth
+  output_img: ./demo/Output/testimg1.jpg
+# network structures
+network_g:
+  type: PI2RNet
+  wf: 64
+  hin_position_left: 0
+  hin_position_right: 3
+
+# path
+path:
+  pretrain_network_g: ./experiments/ModelZoo/net_g_ours.pth
+  strict_load_g: true
+  resume_state: ~
+
+# validation settings
+val:
+  grids: false
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
