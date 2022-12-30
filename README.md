@@ -1,5 +1,5 @@
 
-PI2RNet-Physics Informed Image Restoration Network for Annular Computational Imaging (ACI)
+### PI2RNet-Physics Informed Image Restoration Network for Annular Computational Imaging (ACI)
 
 > PI2RNet is used for image restoration of unfolded panoramic images taken from Panoramic Annular Lens (PAL) composed of few lenses, which is degraded by optical aberrations and unfolding process. 
 ---
