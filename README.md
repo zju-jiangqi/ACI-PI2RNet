@@ -4,7 +4,7 @@
 > PI2RNet is used for image restoration of unfolded panoramic images taken from Panoramic Annular Lens (PAL) composed of few lenses, which is degraded by optical aberrations and unfolding process. 
 ---
 #### Qi Jiang, Hao Shi, Lei Sun, Shaohua Gao, Kailun Yang and Kaiwei Wang
-#### Paper (preprint): https://arxiv.org/abs/2206.06070
+#### Paper (IEEE-TCI): https://ieeexplore.ieee.org/document/10021856?source=authoralert
 #### Our paper is accepted and will be published by IEEE Transactions on Computational Imaging. 
 
 
@@ -75,12 +75,15 @@ This project is under the MIT license, and it is based on [BasicSR](https://gith
 
 If ACI-PI2RNet helps your research or work, please consider citing ACI-PI2RNet.
 ```
-@article{jiang2022annular,
-  title={Annular computational imaging: Capture clear panoramic images through simple lens},
+@ARTICLE{10021856,
   author={Jiang, Qi and Shi, Hao and Sun, Lei and Gao, Shaohua and Yang, Kailun and Wang, Kaiwei},
-  journal={arXiv preprint arXiv:2206.06070},
-  year={2022}
-}
+  journal={IEEE Transactions on Computational Imaging}, 
+  title={Annular Computational Imaging: Capture Clear Panoramic Images Through Simple Lens}, 
+  year={2022},
+  volume={8},
+  number={},
+  pages={1250-1264},
+  doi={10.1109/TCI.2022.3233467}}
 ```
 
 ### Contact
