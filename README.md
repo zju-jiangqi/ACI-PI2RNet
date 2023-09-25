@@ -36,7 +36,7 @@ python setup.py develop --no_cuda_ext
 ### Quick Start (Demo for a single unfolded PAL image)
 ---
 ```
-python basicsr/demo.py -opt options/demo/demo.yml
+PYTHONPATH="./:${PYTHONPATH}" CUDA_VISIBLE_DEVICES=0 python basicsr/demo.py -opt options/demo/demo.yml
 ```
 The input image and related physical information can be found in ./demo/Input while the restored results will be generated in ./demo/Output.
 
@@ -48,11 +48,11 @@ The input image and related physical information can be found in ./demo/Input wh
 
 
 * eval
-  * ```python basicsr/test.py -opt options/test/DIVPano/PI2RNet.yml ```
+  * ```PYTHONPATH="./:${PYTHONPATH}" CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/DIVPano/PI2RNet.yml ```
   
 * train
 
-  * ```python basicsr/train.py -opt options/train/DIVPano/PI2RNet.yml```
+  * ```PYTHONPATH="./:${PYTHONPATH}" CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/DIVPano/PI2RNet.yml```
 
 
 ### Results
